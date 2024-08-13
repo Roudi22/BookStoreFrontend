@@ -1,0 +1,19 @@
+.quote-list {
+    margin-bottom: 20px;
+}
+
+.quote-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.quote-list li {
+    background-color: #f8f9fa;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+hr {
+    margin: 20px 0;
+}

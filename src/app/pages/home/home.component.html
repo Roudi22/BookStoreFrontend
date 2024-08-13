@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-md-12">
+      <h2>Book List</h2>
+      <div *ngIf="books.length === 0">
+  <p>No books available.</p>
+</div>
+      <ul class="list-group">
+        <li *ngFor="let book of books" class="list-group-item d-flex justify-content-between align-items-center ">
+          <div>
+            <div>
+             <div class="d-flex gap-2">
+              <fa-icon [icon]="faHeading"></fa-icon><h5>Title: {{ book.title }}</h5>
+             </div>
+              <div class="d-flex gap-2">
+                <fa-icon [icon]="faAuthor"></fa-icon><p>Author: {{ book.author }}</p>
+              </div>
+              <div class="d-flex gap-2">
+                <fa-icon [icon]="faIsbn"></fa-icon><p>ISBN: {{ book.isbn }}</p>
+              </div>
+              
+            </div>
+          </div>
+          <div class="d-flex gap-4">
+            <button class="btn btn-danger btn-sm float-right" (click)="deleteBook(book.id)">
+              <fa-icon [icon]="faTrash"></fa-icon>
+              Delete
+            </button>
+          <a class="btn btn-primary btn-sm float-right mr-2" [routerLink]="['/edit-book', book.id]">
+            <fa-icon [icon]="faPenSquare"></fa-icon>
+            Edit
+          </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  

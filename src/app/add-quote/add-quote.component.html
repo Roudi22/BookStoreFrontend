@@ -1,0 +1,22 @@
+<div class="quote-list">
+    <h3>Your Quotes</h3>
+    <ul *ngIf="quotes.length > 0; else noQuotes">
+        <li *ngFor="let quote of quotes">
+            {{ quote.text }}
+        </li>
+    </ul>
+    <ng-template #noQuotes>
+        <p>No quotes added yet.</p>
+    </ng-template>
+</div>
+
+<hr>
+
+<!-- Form to add a new quote -->
+<form [formGroup]="quoteForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="text">Add a new quote:</label>
+        <input type="text" id="text" class="form-control" formControlName="text">
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!quoteForm.valid">Add Quote</button>
+</form>
